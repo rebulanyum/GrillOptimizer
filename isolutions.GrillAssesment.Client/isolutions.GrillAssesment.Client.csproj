@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Description>This project is created via Swagger-Generator(https://generator.swagger.io/) with the isolutions OpenAPI document for Grill Assesment(http://isol-grillassessment.azurewebsites.net/swagger/docs/v1).</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="RestSharp" Version="106.6.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\isolutions.GrillAssesment.Client.Model\isolutions.GrillAssesment.Client.Model.csproj" />
+  </ItemGroup>
+
+</Project>
