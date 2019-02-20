@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>rebulanyum.GrillOptimizer.Business</AssemblyName>
+    <RootNamespace>rebulanyum.GrillOptimizer.Business</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>C:\Users\eizzsap\Repositories\github\rebulanyum\GrillOptimizer\Tools\rebulanyum.GrillOptimizer.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\Tools\rebulanyum.GrillOptimizer.snk" Link="rebulanyum.GrillOptimizer.snk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\isolutions.GrillAssesment.Client.Model\isolutions.GrillAssesment.Client.Model.csproj" />
+  </ItemGroup>
+
+</Project>
