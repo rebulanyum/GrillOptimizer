@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{BD8BDD8B-8B97-4FC3-BA22-6DF1C4428B67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{BD8BDD8B-8B97-4FC3-BA22-6DF1C4428B67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isolutions.GrillAssesment.Client", "isolutions.GrillAssesment.Client\isolutions.GrillAssesment.Client.csproj", "{D526535F-FF84-464F-AC39-2DB1589EAA51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "isolutions.GrillAssesment.Client", "isolutions.GrillAssesment.Client\isolutions.GrillAssesment.Client.csproj", "{D526535F-FF84-464F-AC39-2DB1589EAA51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{BBB5423D-8A01-41F8-9E97-A545554A4688}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{BBB5423D-8A01-41F8-9E97-A545554A4688}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isolutions.GrillAssesment.Client.Model", "isolutions.GrillAssesment.Client.Model\isolutions.GrillAssesment.Client.Model.csproj", "{9B85FE00-DB58-4721-BC53-C43684D8483C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "isolutions.GrillAssesment.Client.Model", "isolutions.GrillAssesment.Client.Model\isolutions.GrillAssesment.Client.Model.csproj", "{9B85FE00-DB58-4721-BC53-C43684D8483C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{991452A5-61E3-442A-9DB1-FE515A1327E8}"
 	ProjectSection(SolutionItems) = preProject
 		Tools\rebulanyum.GrillOptimizer.snk = Tools\rebulanyum.GrillOptimizer.snk
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{8B63D6DC-FC66-465A-832D-4378B7DD674F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{9B85FE00-DB58-4721-BC53-C43684D8483C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B85FE00-DB58-4721-BC53-C43684D8483C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B85FE00-DB58-4721-BC53-C43684D8483C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B63D6DC-FC66-465A-832D-4378B7DD674F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B63D6DC-FC66-465A-832D-4378B7DD674F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B63D6DC-FC66-465A-832D-4378B7DD674F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B63D6DC-FC66-465A-832D-4378B7DD674F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
