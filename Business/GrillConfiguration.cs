@@ -9,6 +9,6 @@ namespace rebulanyum.GrillOptimizer.Business
     {
         public SizeF GrillSize { get; set; }
 
-        public SizeF MenuItemSize { get; set; }
+        public static readonly GrillConfiguration Default = new GrillConfiguration() { GrillSize = new SizeF(20, 30) };
     }
 }

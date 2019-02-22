@@ -8,7 +8,7 @@ namespace rebulanyum.GrillOptimizer.Business
 {
     public class DefaultGrillMenuPlanner : GrillMenuPlannerBase
     {
-        public DefaultGrillMenuPlannerBase(GrillConfiguration grill) : base(grill)
+        public DefaultGrillMenuPlanner(GrillConfiguration grill) : base(grill)
         {
         }
 

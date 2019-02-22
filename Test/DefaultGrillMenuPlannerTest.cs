@@ -23,6 +23,15 @@ namespace rebulanyum.GrillOptimizer.Test
         //[TestCategory("TestDevelopment")]
         public void SomeTestMethod()
         {
+            var result = GrillMenuApiMock.Object.GetAll();
+            var plans = new DefaultGrillMenuPlanner(new GrillConfiguration()).Plan(result);
+            for (int i = 0; i < result.Count; i++)
+            {
+                var menu = result[i];
+                var plan = plans.Plans[i];
+                System.Console.WriteLine("Grilling Menu {0}\t- Rounds {1}", menu.Menu, plan.Rounds);
+            }
+            System.Console.WriteLine("Total: {0} menus\t- Rounds {1}", result.Count, plans.Rounds);
         }
     }
 }

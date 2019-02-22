@@ -1,6 +1,7 @@
 ﻿using isolutions.GrillAssesment.Client;
 using isolutions.GrillAssesment.Client.Model;
 using Microsoft.Extensions.DependencyInjection;
+using rebulanyum.GrillOptimizer.Business;
 using System;
 using System.Collections.Generic;
 
@@ -13,6 +14,8 @@ namespace rebulanyum.GrillOptimizer.ConsoleApp
         {
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddScoped<IGrillMenuApi, GrillMenuApi>();
+            serviceCollection.AddScoped<IGrillMenuPlanner, DefaultGrillMenuPlanner>();
+            serviceCollection.AddSingleton(GrillConfiguration.Default);
             Scope = serviceCollection.BuildServiceProvider().CreateScope();
         }
 
