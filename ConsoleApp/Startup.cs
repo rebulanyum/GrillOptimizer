@@ -7,8 +7,10 @@ using System.Collections.Generic;
 
 namespace rebulanyum.GrillOptimizer.ConsoleApp
 {
+    /// <summary>The Startup class: This class is for preparing the Dependency Injection for the Application class.</summary>
     public static class Startup
     {
+        /// <summary>Dependency Injection cantainer's scope.</summary>
         public static readonly IServiceScope Scope;
         static Startup()
         {
@@ -19,12 +21,13 @@ namespace rebulanyum.GrillOptimizer.ConsoleApp
             Scope = serviceCollection.BuildServiceProvider().CreateScope();
         }
 
-        static void Main(string[] args)
+        /// <summary>Main method for the application.</summary>
+        static void Main()
         {
             using (Scope)
             {
                 var app = new Application(Scope.ServiceProvider);
-                app.Run(args);
+                app.Run();
             }
         }
     }

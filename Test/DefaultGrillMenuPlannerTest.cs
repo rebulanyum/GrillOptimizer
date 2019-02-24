@@ -24,7 +24,7 @@ namespace rebulanyum.GrillOptimizer.Test
         public void SomeTestMethod()
         {
             var result = GrillMenuApiMock.Object.GetAll();
-            var plans = new DefaultGrillMenuPlanner(new GrillConfiguration()).Plan(result);
+            var plans = new DefaultGrillMenuPlanner(GrillConfiguration.Default).Plan(result);
             for (int i = 0; i < result.Count; i++)
             {
                 var menu = result[i];

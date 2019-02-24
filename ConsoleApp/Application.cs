@@ -7,15 +7,21 @@ using System.Collections.Generic;
 
 namespace rebulanyum.GrillOptimizer.ConsoleApp
 {
+    /// <summary>The Application class: It uses the Dependency Injection container and executes the Run method.</summary>
     public class Application
     {
+        /// <summary>The Dependency Injection container.</summary>
         public readonly IServiceProvider Services;
+
+        /// <summary>Creates Application instance.</summary>
+        /// <param name="services"></param>
         public Application(IServiceProvider services)
         {
             Services = services;
         }
 
-        public void Run(string[] args)
+        /// <summary>Executes the Application</summary>
+        public void Run()
         {
             var grillMenuApi = Services.GetService<IGrillMenuApi>();
             var grillMenuPlanner = Services.GetService<IGrillMenuPlanner>();
@@ -36,6 +42,10 @@ namespace rebulanyum.GrillOptimizer.ConsoleApp
             {
                 Console.WriteLine(e);
                 //Debug.Print("Exception when calling GrillMenuApi.GetAll: " + e.Message);
+            }
+            finally
+            {
+                Console.ReadLine();
             }
         }
     }
