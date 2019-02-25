@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using rebulanyum.GrillOptimizer.Business;
 using RestSharp;
+using System.Linq;
 
 namespace rebulanyum.GrillOptimizer.Test
 {
@@ -21,17 +22,14 @@ namespace rebulanyum.GrillOptimizer.Test
 
         [TestMethod]
         //[TestCategory("TestDevelopment")]
-        public void SomeTestMethod()
+        public void Requires2RoundsWhenGrillIsFilledOnFirstRound()
         {
-            var result = GrillMenuApiMock.Object.GetAll();
-            var plans = new DefaultGrillMenuPlanner(GrillConfiguration.Default).Plan(result);
-            for (int i = 0; i < result.Count; i++)
-            {
-                var menu = result[i];
-                var plan = plans.Plans[i];
-                System.Console.WriteLine("Grilling Menu {0}\t- Rounds {1}", menu.Menu, plan.Rounds);
-            }
-            System.Console.WriteLine("Total: {0} menus\t- Rounds {1}", result.Count, plans.Rounds);
+            var result = (from menu in GrillMenuApiMock.Object.GetAll()
+                          where menu.Id.GetValueOrDefault() == System.Guid.Parse("99a08d4b-8e20-4811-beee-1b56ac545f90")
+                          select menu).SingleOrDefault();
+            var planner = new DefaultGrillMenuPlanner(GrillConfiguration.Default);
+            GrillMenuGrillingPlan plan = planner.Plan(result);
+            Assert.AreEqual(plan.Rounds, 2);
         }
     }
 }

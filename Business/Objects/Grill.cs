@@ -56,10 +56,14 @@ namespace rebulanyum.GrillOptimizer.Business.Objects
             var grillItemArea = new Rectangle(Point.Empty, grillItem.Size);
             var grillItemLocations = new GrillAreaEnumerable(this, grillItem.Size);
             PlacedGrillItem placedItem = null;
+            // Iterate the possible locations on grill surface.
             foreach (Point grillItemLocation in grillItemLocations)
             {
                 grillItemArea.Location = grillItemLocation;
                 bool hasAnyIntersectionWithExistingItems = AreaIntersectsWithAnyItem(grillItemArea);
+                // If tested area intersects with any of the placed items, 
+                // then we're not placing it and will test for a new loaction; 
+                // otherwise, placing it and returning the placed item.
                 if (!hasAnyIntersectionWithExistingItems)
                 {
                     placedItem = PlacedGrillItem.FromGrillItem(grillItem, grillItemLocation);

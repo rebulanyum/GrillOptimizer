@@ -28,6 +28,7 @@ namespace rebulanyum.GrillOptimizer.Business
 
             var grill = new Grill(GrillConfiguration);
 
+            // Convert given GrillMenuModel instance into Dictionary<GrillItem, int>
             var newMenu = new Dictionary<GrillItem, int>();
             foreach (var grillMenuItem in menu.Items)
             {
@@ -44,25 +45,28 @@ namespace rebulanyum.GrillOptimizer.Business
                 var newMenuItems = (from newMenuItem in newMenu.Keys
                                     where newMenu[newMenuItem] != 0
                                     select newMenuItem).ToArray();
+                // Loop will continue if there are items to be added; otherwise, it will break
                 if (!newMenuItems.Any())
                 {
                     break;
                 }
 
                 TimeSpan maxTimeSpan = new TimeSpan(0,0,0);
+                // Iterate on items with quantity > 0 and add them to to grill
                 foreach (var grillItem in newMenuItems)
                 {
                     int addedCount = grill.AddMenuItem(grillItem, newMenu[grillItem]);
-
+                    // We may not be able to place every item since grill size is limited.
                     newMenu[grillItem] -= addedCount;
                     if (grillItem.CookingTime > maxTimeSpan)
                     {
                         maxTimeSpan = grillItem.CookingTime;
                     }
                 }
+                // Apply the results to the plan.
                 plan.Rounds++;
                 plan.ElapsedTime += (uint)maxTimeSpan.TotalSeconds;
-
+                // Clear the grill for the new round.
                 grill.Clear();
             }
 

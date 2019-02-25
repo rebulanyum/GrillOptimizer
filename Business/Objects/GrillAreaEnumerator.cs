@@ -35,33 +35,37 @@ namespace rebulanyum.GrillOptimizer.Business.Objects
 
         public bool MoveNext()
         {
+            // Get the current area
             Rectangle newGrillItemArea = grillItemArea;
-
+            // Increase the current area's location on X-Axis
             newGrillItemArea.X += boxSize;
+            // If the new area doesn't overflow on the grill.
             if (grillArea.Contains(newGrillItemArea))
             {
                 grillItemArea = newGrillItemArea;
             }
             else
             {
-                newGrillItemArea.X = 0;
-                newGrillItemArea.Y += boxSize;
+                newGrillItemArea.X = 0; // Move the X-Axis to the beginning
+                newGrillItemArea.Y += boxSize; // Increase the current area's location on Y-Axis
+                // If the new area doesn't overflow on the grill.
                 if (grillArea.Contains(newGrillItemArea))
                 {
                     grillItemArea = newGrillItemArea;
                 }
                 else
-                {
-                    return false;
+                {   // The grill's locations are ended: no where to place the item.
+                    return false; 
                 }
             }
-
+            // The item can be placed into current location.
             return true;
         }
 
         public void Reset()
         {
-            grillItemArea.Location = Point.Empty;
+            this.grillItemArea.Location = Point.Empty;
+            this.grillItemArea.Offset(-this.boxSize, 0);
         }
     }
 }
