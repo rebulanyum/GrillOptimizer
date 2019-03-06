@@ -5,7 +5,7 @@
     <AssemblyName>rebulanyum.GrillOptimizer.Business</AssemblyName>
     <RootNamespace>rebulanyum.GrillOptimizer.Business</RootNamespace>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>C:\Users\eizzsap\Repositories\github\rebulanyum\GrillOptimizer\Tools\rebulanyum.GrillOptimizer.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Tools\rebulanyum.GrillOptimizer.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
